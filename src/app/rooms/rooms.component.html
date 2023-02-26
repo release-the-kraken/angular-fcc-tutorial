@@ -1,0 +1,25 @@
+<!-- interpolation -->
+<!--<h2>Welcome to {{hotelName}}.</h2>-->
+<app-header></app-header>
+<div [hidden]="hideRooms">
+  <!-- property binding - binding a variable to HTML property, [] brackets are used to select HTML props-->
+  Number of rooms:
+  <div [ngStyle]="{color: rooms.availableRooms > 0 ? 'green' : 'red', fontFamily: rooms.availableRooms > 0 ?  'sans-serif' : 'serif'}"
+    [innerText]="numberOfRooms"></div>
+</div>
+<!-- event binding - () are used to select HTML events-->
+<button (click)="toggle()">Click me!</button>
+
+<!--{{ rooms.availableRooms ?? 'Sorry, no rooms available.' }}-->
+<div>
+  <button (click)="addRoom()">Add room</button>
+</div>
+<div *ngIf="rooms.availableRooms > 0">
+  <app-rooms-list
+    [rooms]="roomList"
+    [title]="title"
+    (roomSelected)="selectRoom($event)"
+  >
+  </app-rooms-list>
+</div>
+

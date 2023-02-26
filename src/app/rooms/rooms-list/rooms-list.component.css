@@ -1,0 +1,11 @@
+.even{
+  background-color: dodgerblue;
+  color: whitesmoke;
+}
+.odd{
+  background-color: indianred;
+  color: whitesmoke;
+}
+.table th{
+  text-align: center;
+}
